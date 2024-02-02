@@ -1,3 +1,14 @@
+:root {
+    --background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #202124;
+    }
+}
+
+
 body {
     margin: 0px;
     background-color: var(--background-color);
@@ -43,6 +54,7 @@ a {
     border: 1px solid #c0c0c0;
     border-radius: 10px;
     box-sizing: inherit;
+    background-color: #ffffff;
 }
 
 .logo {
