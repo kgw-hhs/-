@@ -1,0 +1,65 @@
+:root {
+    --background-color: #ffffff;
+    --main-color: #303338;
+    --sub-color: #6c6f78;
+    --text-color: #060607;
+    --link-color: #096de7;
+    --header-color: #e2e5e8;
+    --footer-background: #eaedef;
+    --footer-color: #0c0c0e;
+    --hover-color: #b8d3f8;
+    --about-color: #0c0c0e;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #303338;
+        --main-color: #dbdee1;
+        --sub-color: #80848e;
+        --text-color: #f2f3f5;
+        --link-color: #158fd4;
+        --header-color: #1e1f22;
+        --footer-background: #232428;
+        --footer-color: #eff0f2;
+        --hover-color: #6783aa;
+        --about-color: #eff0f2;
+    }
+}
+*{
+    transition: 1s;
+}
+
+.panel{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    display: block;
+    background-color: var(--footer-background);
+    margin: 4px;
+    padding: 10px;
+    border-radius: 10px;
+    width: 300px;
+    min-width: none;
+    height: 180px;
+}
+
+.card h2{
+    font-size: 20px;
+    height: 30px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.excerpt{
+    height: 100px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.contents{
+    max-width: 1313px;
+}
