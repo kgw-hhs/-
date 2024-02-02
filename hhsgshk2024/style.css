@@ -159,7 +159,7 @@ body {
 
 @font-face {
     font-family: 'MyFont';
-    src: url(./file/LINESeedJP_A_TTF_Rg.ttf);
+    src: url(/file/LINESeedJP_A_TTF_Rg.ttf);
 }
 
 h1,
