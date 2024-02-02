@@ -1,0 +1,239 @@
+body {
+    margin: 0px;
+    background-color: var(--background-color);
+    font-family: MyFont;
+}
+
+p,
+h1,
+h2,
+h3,
+a {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #4070f4;
+}
+
+.line-up {
+    display: flex;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url(../file/LINESeedJP_A_TTF_Rg.ttf);
+}
+
+
+.form {
+    text-align: center;
+    padding: 30px 40px 35px;
+    position: relative;
+    border-radius: 10px;
+    box-sizing: inherit;
+}
+
+.logo {
+    width: 200px;
+    margin: 0px;
+    top: 300px;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.forget {
+    margin-top: 10px;
+    text-align: left;
+    color: #4070f4;
+}
+
+.explanation {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.login {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 76.3px;
+    height: 36px;
+    color: #ffffff;
+    font-size: 13px;
+    background-color: #1a73e8;
+    border-radius: 5px;
+}
+
+.login :hover {
+    color: #1a73e8;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+
+.error-message,
+.empty-message{
+    display: none;
+    color: #D93025;
+    text-align: left;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+svg{
+    display: block;
+}
+
+/* エラー時に色を変更する */
+
+/* 共通のスタイリング */
+input:focus,
+input:valid {
+    border-color: #4070f4;
+}
+
+input:focus~label {
+    color: #4070f4;
+}
+
+input:focus~i {
+    color: #4070f4;
+}
+
+.input-box input {
+    border: 1px solid #c0c0c0;
+}
+
+/* エラー時のスタイリング */
+input.valid {
+    /* validの場合のスタイリング */
+}
+
+input.valid:focus,
+input.valid:valid {
+    border: 2px solid #4070f4;
+}
+
+input.valid:focus~label,
+input.valid:valid~label {
+    color: #4070f4;
+}
+
+input.valid:focus~i,
+input.valid:valid~i {
+    color: #4070f4;
+}
+
+input:not(.valid):focus,
+input:not(.valid):valid {
+    border: 2px solid #D93025;
+}
+
+input:not(.valid):focus~label,
+input:not(.valid):valid~label {
+    color: #D93025;
+}
+
+input:not(.valid):focus~i,
+input:not(.valid):valid~i {
+    color: #D93025;
+}
+input:not(.valid) {
+    border: 1px solid #D93025;
+}
+
+
+
+/* ここから入力欄 */
+
+.container {
+    text-align: left;
+    position: relative;
+    width: 95%;
+    border-radius: 6px;
+}
+
+.container .input-box {
+    position: relative;
+    height: 65px;
+}
+
+.input-box input {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    outline: none;
+    border-radius: 6px;
+    font-size: 22px;
+    padding: 0 35px 0 18px;
+    transition: all 0.2s linear;
+}
+
+/*
+input:is(:focus, :valid) {
+    border-color: #4070f4;
+}
+*/
+
+.input-box :is(label, i) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #909090;
+    transition: all 0.2s linear;
+}
+
+.input-box label {
+    left: 18px;
+    pointer-events: none;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+input:is(:focus, :valid)~label {
+    /*color: #4070f4;*/
+    top: 0;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #ffffff;
+}
+
+.input-box i {
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 400px) {
+    .input-box i{
+        display: none;
+    }
+}
+
+/*
+input:is(:focus, :valid)~i {
+    color: #4070f4;
+}
+*/
+
+@media print {
+    body {
+        display: none;
+    }
+}

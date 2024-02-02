@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+    <script src="password.js"></script>
+    <script src="error.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+</head>
+
+<body oncopy="return false" oncut="return false" oncontextmenu="return false" onselectstart="return false">
+    <div class="margin">
+        <div class="form input-box">
+            <form id="loginForm" onsubmit="return false;">
+                <img class="logo" src="../file/logo.png" alt="学習成果発表会のロゴ">
+                <h1>ログイン</h1>
+                <h2>配布されたパスワードでログイン</h2>
+                <div class="container">
+                    <div class="input-box">
+                        <input type="password" spellcheck="false" id="password" name="pass" required />
+                        <label for="">パスワード</label>
+                        <i class="uil uil-eye-slash toggle"></i>
+                    </div>
+                </div>
+                <div class="error-message" id="error-message">
+                    <p><img src="../file/exclamation-circle.svg" alt="exclamation-circle" height="15px"
+                            style="position: relative;top: 2px;">パスワードが間違っています。</p>
+                </div>
+                <div class="empty-message" id="empty-message">
+                    <p><img src="../file/exclamation-circle.svg" alt="exclamation-circle" height="15px"
+                            style="position: relative;top: 2px;">パスワードを入力してください。</p>
+                </div>
+                <p class="forget"><a href="forget">パスワードが不明な場合</a></p>
+                <p class="explanation">問題が発生した場合は、管理者までご連絡ください。</p>
+                <button type="button" onclick="redirect()" class="login">ログイン</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<!--PCとモバイルの切り替え-->
+<script>
+    // ウィンドウの幅を取得する関数
+    function getWindowWidth() {
+        return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    }
+
+    // ページが読み込まれたときに実行される関数
+    function checkWindowSize() {
+        // ウィンドウの幅が550px以下だったらmobile.htmlにリダイレクト
+        if (getWindowWidth() <= 550) {
+            window.location.href = 'mobile.html';
+        }
+    }
+
+    // ウィンドウサイズが変更されたときに実行されるイベント
+    window.onresize = function () {
+        checkWindowSize();
+    };
+
+    // ページが読み込まれたときに初回チェックを行う
+    window.onload = function () {
+        checkWindowSize();
+    };
+</script>
+<!--エラー時の色変更-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // URLからpassパラメータの値を取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const passValue = urlParams.get('pass');
+
+        // input要素に対応するクラスを設定
+        const passwordInput = document.querySelector('input[name="pass"]');
+        if (passValue !== 'error') {
+            passwordInput.classList.add('valid');
+        }
+    });
+</script>
+
+<!--パスワード-->
+<script>
+    const toggle = document.querySelector(".toggle"),
+        input = document.querySelector("input");
+
+    toggle.addEventListener("click", () => {
+        if (input.type === "password") {
+            input.type = "text";
+            toggle.classList.replace("uil-eye-slash", "uil-eye");
+        } else {
+            input.type = "password";
+        }
+    });
+</script>
+
+</html>
